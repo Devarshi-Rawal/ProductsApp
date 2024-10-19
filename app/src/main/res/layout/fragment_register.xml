@@ -7,10 +7,9 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.dashboard.MainActivity">
+        tools:context=".ui.auth.register.RegisterFragment">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
