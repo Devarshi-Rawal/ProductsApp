@@ -20,7 +20,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String","AUTH_BASE_URL","\"https://reqres.in/api/\"")
+            buildConfigField("String","PRODUCT_BASE_URL","\"https://lobster-app-ddwng.ondigitalocean.app/\"")
+        }
         release {
+            buildConfigField("String","AUTH_BASE_URL","\"https://reqres.in/api/\"")
+            buildConfigField("String","PRODUCT_BASE_URL","\"https://lobster-app-ddwng.ondigitalocean.app/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +42,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures{
+        buildConfig = true
         dataBinding = true
     }
 }
