@@ -17,3 +17,8 @@ local.properties
 /.idea/other.xml
 /.idea/vcs.xml
 /.idea/misc.xml
+/.idea/compiler.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/kotlinc.xml
+/.idea/migrations.xml
+/.idea/misc.xml
