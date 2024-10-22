@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.productsapp.ui.auth.login.models.LoginResponse
 import com.example.productsapp.ui.dashboard.dashboard.models.Product
-import com.example.productsapp.ui.dashboard.data.MainActivityRepository
+import com.example.productsapp.ui.data.MainActivityRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.productsapp.ui.dashboard.data
+package com.example.productsapp.ui.data
 
 import android.util.Log
 import com.example.productsapp.db.dao.ProductDao
