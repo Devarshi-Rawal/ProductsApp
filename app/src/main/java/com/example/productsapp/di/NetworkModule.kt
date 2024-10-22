@@ -1,5 +1,6 @@
 package com.example.productsapp.di
 
+import com.example.productsapp.BuildConfig
 import com.example.productsapp.networking.ApiService
 import com.example.productsapp.networking.AuthApiService
 import dagger.Module

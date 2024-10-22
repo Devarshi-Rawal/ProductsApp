@@ -2,8 +2,8 @@ package com.example.productsapp.ui.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.productsapp.db.entities.ProductEntity
 import com.example.productsapp.ui.auth.login.models.LoginResponse
+import com.example.productsapp.ui.dashboard.dashboard.models.Product
 import com.example.productsapp.ui.dashboard.data.MainActivityRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
@@ -13,28 +13,28 @@ import javax.inject.Inject
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(private val repository: MainActivityRepository): ViewModel() {
 
-    val productEntity = ProductEntity()
+    val product = Product()
 
     fun insertProduct(){
         viewModelScope.launch {
-            repository.insertProduct(productEntity)
+            repository.insertProduct(product)
         }
     }
 
     fun updateProduct(){
         viewModelScope.launch {
-            repository.updateProduct(productEntity)
+            repository.updateProduct(product)
         }
     }
 
     fun deleteProduct(){
         viewModelScope.launch {
-            repository.deleteProduct(productEntity)
+            repository.deleteProduct(product)
         }
     }
 
-    fun getAllProducts(): List<ProductEntity>{
-        var listOfProductEntities = listOf<ProductEntity>()
+    fun getAllProducts(): List<Product>{
+        var listOfProductEntities = listOf<Product>()
         viewModelScope.launch {
             listOfProductEntities = async {
                 repository.getAllProducts()

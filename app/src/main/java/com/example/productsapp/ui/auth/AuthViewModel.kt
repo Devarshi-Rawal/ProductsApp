@@ -13,16 +13,7 @@ class AuthViewModel @Inject constructor(private val repository: AuthRepository) 
 
     fun loginUser(email: String, password: String){
         viewModelScope.launch {
-            val loginResponse = repository.loginUser(email,password)
-            if (loginResponse.isSuccessful){
-                if (loginResponse.body()?.token.toString().isNotEmpty()){
-                    Log.e("LoginUser", "fetchProducts: Login Success")
-                } else{
-                    Log.e("LoginUser", "fetchProducts: Login Unsuccessful")
-                }
-            } else{
-                Log.e("LoginUser", "fetchProducts: Login Unsuccessful")
-            }
+            repository.loginUser(email,password)
         }
     }
 }

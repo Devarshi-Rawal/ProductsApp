@@ -6,20 +6,20 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.productsapp.db.entities.ProductEntity
+import com.example.productsapp.ui.dashboard.dashboard.models.Product
 
 @Dao
 interface ProductDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertProduct(productEntity: ProductEntity)
+    fun insertProduct(product: Product)
 
     @Update
-    fun updateProduct(productEntity: ProductEntity)
+    fun updateProduct(product: Product)
 
     @Delete
-    fun deleteProduct(productEntity: ProductEntity)
+    fun deleteProduct(product: Product)
 
-    @Query("SELECT * FROM products")
-    fun getAllProducts(): List<ProductEntity>
+    @Query("SELECT * FROM product")
+    fun getAllProducts(): List<Product>
 }
