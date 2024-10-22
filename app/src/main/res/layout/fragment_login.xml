@@ -21,7 +21,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:hint="Email"
+            android:hint="@string/email"
+            app:boxStrokeErrorColor="@android:color/holo_red_dark"
+            app:errorEnabled='@{viewModel.emailStateFlow.toString() == ""}'
+            app:errorTextColor="@android:color/holo_red_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +35,9 @@
                 android:id="@+id/textInputEditTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress"
+                android:text="@{viewModel.emailStateFlow}"
+                android:afterTextChanged="@{(text) -> viewModel.afterEmailTextChanged(text)}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -40,7 +45,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:hint="Password"
+            android:hint="@string/password"
+            app:boxStrokeErrorColor="@android:color/holo_red_dark"
+            app:errorEnabled='@{viewModel.passwordStateFlow.toString() == ""}'
+            app:errorTextColor="@android:color/holo_red_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
@@ -49,16 +57,18 @@
                 android:id="@+id/textInputEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:text="@{viewModel.passwordStateFlow}"
+                android:afterTextChanged="@{(text) -> viewModel.afterPasswordTextChanged(text)}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:textSize="16sp"
             android:layout_margin="15dp"
-
+            android:onClick="@{()->viewModel.loginUser()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
